@@ -108,3 +108,10 @@
     // Reemplazar palabras de un string
     $frase = str_replace("vida", "moto", $frase);
     echo $frase;
+    echo "<br/>";
+
+    // MAYUSCULAS Y minusculas
+    echo strtolower($frase);
+    echo "<br/>";
+    echo strtoupper($frase);
+    
