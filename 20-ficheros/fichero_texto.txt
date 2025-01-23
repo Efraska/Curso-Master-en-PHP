@@ -1,0 +1,2 @@
+hola soy el contenido de fichero_texto.txt
+que haces?*** Soy un texto metido desde PHP ****** Soy un texto metido desde PHP ***
