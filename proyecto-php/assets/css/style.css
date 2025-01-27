@@ -77,7 +77,7 @@ body{
     text-shadow: 0px 0px 0px black, -1px -1px 0px black, -2px -2px 0px black;
 }
 
-/*MENU*/
+/* MENU */
 #menu{
     clear: both;
     width: 100%;
@@ -115,7 +115,7 @@ body{
 #contenedor{
     width: 85%;
     height: auto;
-/*    min-height: 600px;*/
+    /* min-height: 600px; */
     margin: 0px auto;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -235,7 +235,7 @@ input[type="submit"],
 
 #ver-todas a{
     display: block;
-    border-radius: 2px;
+    border-radius: 3px;
     padding: 15px;
     color:white;
     background: #007ee5;

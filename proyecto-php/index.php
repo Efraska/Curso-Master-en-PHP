@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Videojuegos</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <!-- Favicons -->
     <link
       rel="icon"
@@ -16,7 +17,7 @@
     <!-- CABECERA -->
     <header id="cabecera">
         <!-- LOGO -->
-        <div class="logo">
+        <div id="logo">
             <a href="index.php">
                 Blog de Videojuegos
             </a>
@@ -33,9 +34,11 @@
                 <li><a href="index.php">Contacto</a></li>
             </ul>
         </nav>
+
+        <div class="clearfix"></div>
     </header>
 
-    <div class="contenedor">
+    <div id="contenedor">
         <!-- BARRA LATERAL -->
         <aside id="sidebar">
             <div id="login" class="bloque">
@@ -75,24 +78,38 @@
          <div id="principal">
             <h1>Ultimas entradas</h1>
             <article class="entrada">
+                <a href="">
                 <h2>Titulo de mi entrada</h2>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus ea expedita nemo, quidem minima in reiciendis, ratione eaque pariatur tempore, explicabo adipisci aperiam provident suscipit neque! Laborum officiis nulla ipsa.
                 </p>
-            </article>
-            <article class="entrada">
+                </a>
+                <a href="">
                 <h2>Titulo de mi entrada</h2>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus ea expedita nemo, quidem minima in reiciendis, ratione eaque pariatur tempore, explicabo adipisci aperiam provident suscipit neque! Laborum officiis nulla ipsa.
                 </p>
-            </article>
-            <article class="entrada">
+                </a>
+                <a href="">
                 <h2>Titulo de mi entrada</h2>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus ea expedita nemo, quidem minima in reiciendis, ratione eaque pariatur tempore, explicabo adipisci aperiam provident suscipit neque! Laborum officiis nulla ipsa.
                 </p>
+                </a>
+                <a href="">
+                <h2>Titulo de mi entrada</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus ea expedita nemo, quidem minima in reiciendis, ratione eaque pariatur tempore, explicabo adipisci aperiam provident suscipit neque! Laborum officiis nulla ipsa.
+                </p>
+                </a>
             </article>
-         </div>
+
+            <div id="ver-todas">
+                <a href="">Ver todas las entradas</a>
+            </div>  
+         </div><!-- Fin principal -->
+         
+         <div class="clearfix"></div>
     </div>
     <!-- PIE DE PÁGINA -->
      <footer id="pie">
