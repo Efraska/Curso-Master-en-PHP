@@ -4,7 +4,7 @@ $conexion = mysqli_connect("localhost", "root", "admin", "phpmysql");
 
 // Comprobar si la conexion es correcta
 if (mysqli_connect_errno()) {
-    echo " Laconexion a la base de datos MySQL ha fallado: ".mysqli_connect_error();
+    echo " La conexion a la base de datos MySQL ha fallado: ".mysqli_connect_error();
 } else {
     echo "Conexión realizada correctamente!!";
 }
@@ -23,4 +23,15 @@ while ($nota = mysqli_fetch_assoc($query)) {
     // echo "</pre>";
     echo "<h2>".$nota['titulo']."</h2>";
     echo $nota['descripcion'].'<br/>';
+}
+
+// Insertar en la base de datos desde PHP
+$sql = "INSERT INTO notas VALUES(NULL, 'Nota desde PHP', 'Esto es una nota de PHP', 'green')";
+$insert = mysqli_query($conexion, $sql);
+
+echo "<hr/>";
+if ($insert) {
+    echo "DATOS INSERTADOS CORRECTAMENTE";
+} else {
+    echo "ERROR: ".mysqli_error($conexion);
 }
