@@ -17,9 +17,43 @@ function borrarErrores() {
         $borrado = session_unset();
     }
 
+    if (isset($_SESSION['errores_entrada'])) {
+        $_SESSION['errores_entrada'] = null;
+    }
+
     if (isset($_SESSION['completado'])) {
         $_SESSION['completado'] = null;
         $borrado = session_unset();
     }
     return $borrado;
+}
+
+function conseguirCategorias() {
+
+    global $db;
+
+    $sql = "SELECT * FROM categorias ORDER BY id ASC;";
+    $categorias = mysqli_query($db, $sql);
+
+    $result = array();
+    if ($categorias && mysqli_num_rows($categorias) >= 1 ) {
+        $result = $categorias;
+    }
+
+    return $result;
+}
+
+function conseguirUltimasEntradas($conexion){
+    $sql = "SELECT e.*, c.nombre AS categoria FROM entradas e " .
+        "INNER JOIN categorias c ON e.categoria_id = c.id " .
+        "ORDER BY e.id DESC LIMIT 4";
+    $entradas = mysqli_query($conexion, $sql);
+
+    $resultado = array();
+    if ($entradas && mysqli_num_rows($entradas) >= 1) {
+        $resultado = $entradas;
+    }
+
+    return $entradas;
+
 }
