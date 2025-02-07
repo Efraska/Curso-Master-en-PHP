@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    # Activar mod_rewrite
+    RewriteEngine on
+
+    # Manejo de error 404 con URL relativa
+    ErrorDocument 404 /error/
+
+    # Si no es un archivo ni un directorio real, aplicar reescritura
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteCond %{SCRIPT_FILENAME} !-f
+
+    # Manejar URLs amigables (acepta letras, números y guiones)
+    RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?controller=$1&action=$2 [L,QSA]
+</IfModule>
