@@ -27,9 +27,10 @@ if(isset($_GET['controller'])){
 if (isset($nombre_controlador) && class_exists($nombre_controlador)) {
     $controlador = new $nombre_controlador();
 
-    if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) {
+    if (isset($_GET['action']) && isset($_GET['id']) && method_exists($controlador, $_GET['action'])) {
         $action = $_GET['action'];
-        $controlador->$action();
+        $id =(int)$_GET['id'];
+        $controlador->$action($id);
     }else {
         // Si hay una acción definida, ejecutar la acción por defecto
         $action_default = action_default;
