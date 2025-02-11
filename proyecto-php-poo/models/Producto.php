@@ -105,8 +105,31 @@ class Producto{
             $result = true;
         }
         return $result;
-    }
+	}
 
+	public function edit() {
+		if (!is_numeric($this->id) || $this->id <= 0) {
+			return false; // Evita ejecutar una consulta inválida
+		}
+	
+		$sql = "UPDATE productos SET categoria_id=" . intval($this->getCategoria_id()) . ",
+				nombre='{$this->getNombre()}',
+				descripcion='{$this->getDescripcion()}',
+				precio=" . floatval($this->getPrecio()) . ",
+				stock=" . intval($this->getStock());
+	
+		if ($this->getImagen() != null) {
+			$sql .= ", imagen='{$this->getImagen()}'";
+		}
+	
+		$sql .= " WHERE id={$this->id};";
+	
+		$save = $this->db->query($sql);
+	
+		return $save ? true : false;
+	}
+	
+	
     public function delete() {
         if (!isset($this->id) || !is_numeric($this->id) || $this->id <= 0) {
             return false; // Evita ejecutar una consulta inválida
